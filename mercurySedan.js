@@ -14,7 +14,8 @@ console.log(v.make)
 //TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
 
 class Car extends Vehicle {
-    super constructor (maxiumumPassengers, passengers, numberOfWheels, maximumSpeed, fuel, scheduleService) {
+    constructor (maxiumumPassengers, passengers, numberOfWheels, maximumSpeed, fuel, scheduleService) {
+        super (make, model, year, color, mileage);
         this.maxiumumPassengers = 5;
         this.passengers = 0;
         this.numberOfWheels = 4;
@@ -23,28 +24,35 @@ class Car extends Vehicle {
         this.scheduleService = false;
     }
 
-    loadPassenger(num);
-
-    Start() {
-        if (this.fuel > 0);
-        start = true;
+    loadPassenger(num) {
+        if (this.passengers < this.maxiumumPassengers) {
+            if ((num + this.passengers) <= this.maxiumumPassengers) {
+                this.passengers = num;
+                return this.passengers;
+            } else {
+                console.log(this.model + " " + this.make + "does not have enough space to take all passengers");
+            }  {
+                console.log(this.model + " " + this.make + "is full");
+            }
+        } 
     }
 
-    scheduleService(mileage) {
-        if (mileage > 30000) {
-            this.scheduleService = true;
+    start() {
+        if (this.fuel > 0) {
+            console.log("engine has started");
+            return this.started = true;
+        } else {
+            console.log("no fuel");
+            return this.started = false;
         }
     }
 
-    
-}
-
-
-
-
-
-
-
+    serviceUpdate(mileage) {
+        if (this.mileage > 30000) {
+            this.scheduleService = true;
+            return this.scheduleService = true;
+        }  
+    }
 
 
 
@@ -53,7 +61,13 @@ class Car extends Vehicle {
 //You can use the same instance "v" of the Vehicle class above for the base class.
 
 
+let v = new Car ("Mercury", "Sedan", "1965", "color", "mileage");
 
+v.start()
+v.loadPassenger(5)
+v.serviceUpdate()
+
+console.log(v)
 
 
 //Create at least two new instances of the Car class and test them here:
