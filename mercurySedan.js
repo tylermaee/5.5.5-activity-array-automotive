@@ -61,11 +61,11 @@ class Car extends Vehicle {
 //You can use the same instance "v" of the Vehicle class above for the base class.
 
 
-let v = new Car ("Mercury", "Sedan", "1965", "color", "mileage");
+let myCar = new Car ("Mercury", "Sedan", "1965", "white", "650000");
 
-v.start()
-v.loadPassenger(5)
-v.serviceUpdate()
+mYCar.start()
+myCar.loadPassenger(5)
+myCar.serviceUpdate()
 
 console.log(v)
 
